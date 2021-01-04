@@ -5,7 +5,7 @@
 QuoteBot is an open source Discord bot coded in JavaScript with [Discord.js](https://discord.js.org) by Kataya42
 
 
-##Features
+## Features
 
 * !quote [ name ] , gives a quote from that person 
 
