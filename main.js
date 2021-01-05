@@ -8,7 +8,7 @@ const mark = " - ";
 const prefix = "!";
 
 client.once("ready", () =>{
-    console.log("online");
+    console.log(" bot is online :) ");
 });
 
 client.on("message",message=>{
