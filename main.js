@@ -64,7 +64,7 @@ fs.readFile('token.txt', 'utf-8', (err, data) => {
         throw err;
     } 
 
-// token not included in git due to security issues 
+// token not included in git due for security reasons
 const token = data.split("\n");
 client.login(token[0]);
 

@@ -76,7 +76,8 @@
                 "Joo ei ala J:llä.",
                 "Missä se vitun nainen menee?!",
                 "Hehee, mä voin tökkii tätä naista tisseihin",
-                "Pieni kalja, suuri pillu."
+                "Pieni kalja, suuri pillu.",
+                "Tulilintu kakaa"
             ],
             "signature": true,
             "name": "Anri"
@@ -160,6 +161,14 @@
             "signature": true,
             "name": "Toni"
         }, 
+        "elmo": {
+            "quotes": 
+            [
+                "I can take it! ... Au!"
+            ],
+            "signature": true,
+            "name": "Elmo"
+        },
         "suola": {
             "quotes": 
             [
@@ -167,7 +176,6 @@
                 "Änri: 'mitäs valitsitte?'' \nKonste: 'Tapetaan Jaska'",
                 "Leia: 'Miten lentokonetta ajetaan?' \nJuhani: 'Hyvin varovasti'",
                 "Miika: 'Mämmmm' \nJuhani: 'Mämmm' \nJaske: 'Mämmm' \nMiika: 'hyvä keskustelu'",
-                "Anri: 'Tulilintu kakaa' \nElmo: 'I can take it! ... Au!'",
                 "Jaska: 'Mitäs meinasit syödä siellä suihkussa (Konsta)' \nLuca: 'Juustoo?'",
                 "Luca: 'Onks sil mikä ase' \nKonsta: 'Pyssy. Eiku..'",
                 "Miika: Tämän valtion korkein johtaja, niinku miko. \nAnri: 'Nico nico niiii' \nMiika: ':ree:  Ei kun miko' \nNo one:  \nAbsolutely no one: \nLuca: 'Mikko mikko miii'",
