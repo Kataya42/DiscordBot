@@ -172,6 +172,16 @@
             ],
             "signature": true,
             "name": "Elmo"
+            
+        },
+        "mags": {
+            "quotes": 
+            [
+                "Tässä on joku vitun ruumis, ku mä yritän lyödä tätä naista"
+            ],
+            "signature": true,
+            "name": "Mags"
+            
         },
         "suola": {
             "quotes": 
