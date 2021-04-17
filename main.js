@@ -11,6 +11,25 @@ client.once("ready", () =>{
     console.log(" bot is online :) ");
 });
 
+
+client.on('messageReactionAdd', (reaction, user) => {
+    let message = reaction.message, emoji = reaction.emoji;
+
+    if (emoji.name == '✅') {
+        message.channel.send("yes");
+        reaction.remove(user);
+    }
+
+    else if (emoji.name == '📌') {
+        message.pin()
+        reaction.remove(user);
+    } else {
+
+    }
+
+    
+});
+
 client.on("message",message=>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -52,6 +71,10 @@ client.on("message",message=>{
         
     } else if(command === "help"){
         message.channel.send("!quote + name to give quote \n\nSide note: quotettavat henkilöt ovat: \nMiika, Olli, Leia, Jaska, Miranda, Anri, Jaakko, Konsta, Juhani, Aleksi, Luca, Toni, Fisu, suola");
+
+    
+    } else if(command === "raidtime"){
+        message.channel.send("");
 
     } else{
         //message.channel.send("bork");
