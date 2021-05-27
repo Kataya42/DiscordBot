@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
+
+
 const client = new Discord.Client();
 const mark = " - ";
 
@@ -86,12 +88,11 @@ client.on("message",message=>{
 
     } else if(command === "hush"){
 
-            picList = ["./hush2.png", "./hush3.png", "./hush4.png"]
-            const random = Math.floor(Math.random() * picList.length);
-
+            var files = fs.readdirSync('./pics/')
+            let chosenFile = files[Math.floor(Math.random() * files.length)] 
             message.channel.send('', {
                 files: [
-                    picList[random]
+                    './pics/' + chosenFile    
                 ]
             });
 
