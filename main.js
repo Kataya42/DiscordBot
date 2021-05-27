@@ -80,7 +80,7 @@ client.on("message",message=>{
                 
         
     } else if(command === "help"){
-        message.channel.send("List of commands: help, quote, hush, ping.\nYou can also react to a message with :pushpin: to pin a message");
+        message.channel.send("List of commands: help, quote, hush, ping, random.\nYou can also react to a message with :pushpin: to pin a message");
 
     } else if(command === "raidtime"){
         //TO BE IMPLEMENTED
