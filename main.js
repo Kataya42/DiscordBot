@@ -87,7 +87,7 @@ client.on("message",message=>{
                 throw err;
             } 
 
-                if (message.channel.id == "788773416822898741"){
+                if (message.channel.id == "597398993491984414"){
                     var suola = JSON.parse(content);
                 } else {
                     var suola = JSON.parse(data);
@@ -137,7 +137,7 @@ client.on("message",message=>{
             }
 
 
-            if (message.channel.id == "788773416822898741"){
+            if (message.channel.id == "597398993491984414"){
                 var suola = JSON.parse(content);
             } else {
                 var suola = JSON.parse(data);
