@@ -8,7 +8,7 @@ All the quotes can be found in [quotes.JSON](https://github.com/Kataya42/Discord
 
 
 ## Features
-
+aw
 * !quote [ name ] , gives a quote from that person 
 * !random, gives a random quote 
 * !hush (name), hushe's the person

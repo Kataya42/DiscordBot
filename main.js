@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
-
-
 const client = new Discord.Client();
 const mark = " - ";
 
@@ -11,6 +9,30 @@ const prefix = "!";
 
 client.once("ready", () =>{
     console.log(" bot is online :) ");
+});
+
+
+
+
+client.on("presenceUpdate", function(oldMember, newMember){
+    if(newMember.user.username = "Kataya"){ // Kataya
+        if (newMember.guild.id == "788773416822898738"){ //Bot test
+            if(newMember.userID == "153854949762138113"){ // Kataya
+                if(newMember.activities.length != 0){
+                    if (newMember.activities[0].applicationID == "572456126872944651"){ // Satisfactory
+                        channel = client.channels.cache.get('884501406546026536'); // Tehdasmemes factory-status channel
+                        channel.send('Factory is open :)');
+
+                    }
+                } else if(oldMember.activities.length !=0){
+                    if (oldMember.activities[0].applicationID == "572456126872944651"){ // Satisfactory
+                        channel = client.channels.cache.get('884501406546026536'); //Tehdasmemes factory-status channel
+                        channel.send('Factory is closed :(');
+                    }
+                }    
+            } 
+        }
+    }
 });
 
 
@@ -54,37 +76,54 @@ client.on("message",message=>{
     
     } else if( command === "quote" && args.length == 1){
 
+        fs.readFile('staticQuotes.json', 'utf-8', (err, content) => {
+            if (err){
+                throw err;
+            }
+        
+
         fs.readFile('quotes.json', 'utf-8', (err, data) => {
             if (err) {
                 throw err;
             } 
-            var suola = JSON.parse(data);
-            var name = input.toLocaleLowerCase();
 
-            if (suola["people"].hasOwnProperty(name)){
-
-                //list of quotes by people
-                const quoteList = suola["people"][name]["quotes"];
-                const random = Math.floor(Math.random() * quoteList.length);
-
-                // should the bot add a signature to the end of the quote or not
-                if(suola["people"][name]["signature"] == true){
-                    message.channel.send('"'+quoteList[random]+'"' + mark + suola["people"][name]["name"])
-                } else{
-                    message.channel.send(quoteList[random])
+                if (message.channel.id == "788773416822898741"){
+                    var suola = JSON.parse(content);
+                } else {
+                    var suola = JSON.parse(data);
                 }
-                
+                var name = input.toLocaleLowerCase();
+                if (suola["people"].hasOwnProperty(name)){
 
-            } 
+                    //list of quotes by people
+                    const quoteList = suola["people"][name]["quotes"];
+                    const random = Math.floor(Math.random() * quoteList.length);
+
+                    // should the bot add a signature to the end of the quote or not
+                    if(suola["people"][name]["signature"] == true){
+                        message.channel.send('"'+quoteList[random]+'"' + mark + suola["people"][name]["name"])
+                    } else{
+                        message.channel.send(quoteList[random])
+                    }
+                    
+                }
         });
+    });
                 
-        
     } else if(command === "help"){
         message.channel.send("List of commands: help, quote, hush, ping, random.\nYou can also react to a message with :pushpin: to pin a message");
 
     } else if(command === "raidtime"){
-        //TO BE IMPLEMENTED
-        message.channel.send("a");
+
+        //channel = client.channels.cache.get('788773416822898741');
+        //channel.send('Pong');
+        //message.channel.send("a");
+
+    } else if(command === "yuuki"){
+        message.channel.send("<@114403054505295880> DONT ASSIZE");
+
+    } else if(command === "hentai"){
+        message.channel.send("sus");
 
     } else if(command === "random") {
      
@@ -92,8 +131,17 @@ client.on("message",message=>{
             if (err) {
                 throw err;
             } 
+        fs.readFile('staticQuotes.json', 'utf-8', (err, content) => {
+            if (err){
+                throw err;
+            }
 
-            var suola = JSON.parse(data);
+
+            if (message.channel.id == "788773416822898741"){
+                var suola = JSON.parse(content);
+            } else {
+                var suola = JSON.parse(data);
+            }
             const keys = Object.keys(suola["people"]);
             const randIndex = Math.floor(Math.random() * keys.length);
             const randKey = keys[randIndex];
@@ -109,6 +157,7 @@ client.on("message",message=>{
                 message.channel.send(quoteList[random])
             }
         });
+    });
         
     
     } else if(command === "hush"){

@@ -1,0 +1,33 @@
+{
+    "people": 
+    { 
+        "bruno": {
+            "quotes": 
+            [
+                "Im part of a superior race called gamers" ,
+                "I'm sandbanging the bunnies",
+                "We blew each other's balls and it worked"
+            ],
+            "signature": true,
+            "name": "Bruno"
+        }, 
+        "yuuki": {
+            "quotes": 
+            [
+                "Ozmalet is temporary, sandbanging is forever"
+            ],
+            "signature": true,
+            "name": "Yuuki"
+        }, 
+        
+        "shino": {
+            "quotes": 
+            [
+                "Let me just quote Garuda: Ha ha hahaha hihi haha hii"
+            ],
+            "signature": true,
+            "name": "Shino"
+        }
+    }
+
+}
