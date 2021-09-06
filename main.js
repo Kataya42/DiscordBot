@@ -79,15 +79,14 @@ client.on("message",message=>{
         fs.readFile('staticQuotes.json', 'utf-8', (err, content) => {
             if (err){
                 throw err;
-            }
-        
+            }    
 
         fs.readFile('quotes.json', 'utf-8', (err, data) => {
             if (err) {
                 throw err;
             } 
 
-                if (message.channel.id == "597398993491984414"){
+                if (message.guild.id == "588550599230881793"){
                     var suola = JSON.parse(content);
                 } else {
                     var suola = JSON.parse(data);
@@ -137,7 +136,7 @@ client.on("message",message=>{
             }
 
 
-            if (message.channel.id == "597398993491984414"){
+            if (message.guild.id == "588550599230881793"){
                 var suola = JSON.parse(content);
             } else {
                 var suola = JSON.parse(data);
