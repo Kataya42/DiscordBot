@@ -11,7 +11,7 @@ client.once("ready", () =>{
     console.log(" bot is online :) ");
 });
 
-/*
+/* Not used 
 client.on("presenceUpdate", function(oldMember, newMember){
     
     if(newMember.user.username = "Kataya"){ // Kataya
