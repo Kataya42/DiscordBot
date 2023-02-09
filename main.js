@@ -42,7 +42,7 @@ client.on("messageCreate", message => {
 
         var name = input.toLocaleLowerCase();
         // Attribute a random quote to gandhi
-        if (name === "gandi"){
+        if (name === "gandhi"){
           var suola = JSON.parse(data);
           const keys = Object.keys(suola["people"]);
           const randIndex = Math.floor(Math.random() * keys.length);
