@@ -39,8 +39,26 @@ client.on("messageCreate", message => {
         } else {
           var suola = JSON.parse(data);
         }
+
         var name = input.toLocaleLowerCase();
-        if (suola["people"].hasOwnProperty(name)) {
+        // Attribute a random quote to gandhi
+        if (name === "gandi"){
+          var suola = JSON.parse(data);
+          const keys = Object.keys(suola["people"]);
+          const randIndex = Math.floor(Math.random() * keys.length);
+          const randKey = keys[randIndex];
+          const name = suola["people"][randKey];
+          
+          quoteList = name["quotes"];
+          const random = Math.floor(Math.random() * quoteList.length);
+
+          if (name["signature"] == true) {
+            message.channel.send('"' + quoteList[random] + '"' + mark + "Gandhi")
+          } else {
+            message.channel.send('"Lättys kii" - Gandhi')
+          }
+
+        } else if (suola["people"].hasOwnProperty(name)) {
           // list of quotes by people
           const quoteList = suola["people"][name]["quotes"];
           const random = Math.floor(Math.random() * quoteList.length);
@@ -88,28 +106,9 @@ client.on("messageCreate", message => {
 
       });
     });
-  } else if (command === "gandhi") {
-    fs.readFile('quotes.json', 'utf-8', (err, data) => {
-      if (err) {
-        throw err;
-      }
-
-      var suola = JSON.parse(data);
-      const keys = Object.keys(suola["people"]);
-      const randIndex = Math.floor(Math.random() * keys.length);
-      const randKey = keys[randIndex];
-      const name = suola["people"][randKey];
-
-      quoteList = name["quotes"];
-      const random = Math.floor(Math.random() * quoteList.length);
-
-      if (name["signature"] == true) {
-        message.channel.send('"' + quoteList[random] + '"' + mark + "Gandhi")
-      } else {
-        message.channel.send('"Lättys kii" - Gandhi')
-      }
-
-    })
+  
+  } else if (command === "help") {
+    message.channel.send("Available commands: \n!quote [name], gives a quote by that person\n!random, gives a random quote");
   };
 
 });
