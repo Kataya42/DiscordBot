@@ -14,13 +14,15 @@ client.on("messageCreate", message => {
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const args = message.content.slice(prefix.length).split(/ + / );
+  const args = message.content.slice(prefix.length).split(/ +/);
 
   const command = args.shift().toLocaleLowerCase();
   const input = args.slice(-1)[0];
 
   if (command === "ping") {
+    /*
     message.channel.send("pong");
+    */
   } else if (command === "quote" && args.length == 1) {
     fs.readFile('staticQuotes.json', 'utf-8', (err, content) => {
       if (err) {
